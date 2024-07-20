@@ -1,13 +1,14 @@
 //VARIABLE OVERRIDES
-$primary-color: #ac0b2f;
-$dark-color: #51000a;
-$light-color: #f01e37;
+$red-dark: #680A2C;
+$red-light: #FF203B;
+$purple-dark: #3D1382;
+$purple-light: #9B62FF;
+$creme: #FFF2F4;
 
 //CUSTOM VARIABLES
 $default-font-color: #000000;
-
-$lightest-color: #ffffff;
 $darkest-color: #000000;
+
 
 // Only apply sticky when columns are shown side-by-side
 @media screen and (min-width: 841px) {
@@ -21,7 +22,7 @@ $darkest-color: #000000;
 
 //CUSTOM CSS
 body {
-    background-color: $lightest-color;
+    background-color: $creme;
 }
 
 h1 {
@@ -57,15 +58,15 @@ p {
 }
 
 a {
-    color: $light-color;
+    color: $red-light;
 }
 
 a:hover {
-    color: $primary-color;
+    color: $red-light;
 }
 
 a:visited {
-    color: $primary-color;
+    color: $red-light;
 }
 
 ul {
@@ -83,23 +84,25 @@ li {
 }
 
 #header {
-    background-color: $primary-color;
+    background-color: $red-light;
     font-family: Geist;
     font-weight: 800;
     text-transform: uppercase;
-    color: $light-color;
+    color: $red-light;
+    margin: 10px;
+    width: calc(100vw - 20px);
 }
 
 #header a {
-    color: $lightest-color;
+    color: $creme;
 }
 
 #header a:hover {
-    color: $dark-color !important;
+    color: $red-dark !important;
 }
 
 #header a.active {
-    color: $dark-color !important;
+    color: $red-dark !important;
 }
 
 #header .navbar .logo img {
@@ -130,7 +133,7 @@ body.header-fixed.header-animated #header.scrolled img {
 
 //dropdown menu styling
 .desktop-menu li li{
-    background-color: $light-color;
+    background-color: $red-light;
 }
 
 .modular-hero h1, .modular-hero h2 {
@@ -161,16 +164,22 @@ body.header-fixed.header-animated #header.scrolled img {
 }
 */
 .modular-hero #to-start {
-     color: $lightest-color;
+     color: $creme;
+}
+#start {
+    // background-color: #1ac55f;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 500px  500px;
 }
 
 .modular-hero.hero-fullscreen {
     h1 {
-	font-family: Bitter;
+	font-family: Anybody;
 	text-align: left;
     }
     h2 {
-        font-family: Bitter;
+        font-family: Anybody;
 	text-align: left;
     }
 }
@@ -250,9 +259,10 @@ body.header-fixed.header-animated #header.scrolled img {
 
 .modular-contacts .card {
     font-family: Geist;
+    border:  3px solid 25px;
     width: 18%;
-    border: none;
-    box-shadow: 5px 5px 5px lightgrey;
+    // border: none;
+    // box-shadow: 5px 5px 5px lightgrey;
 }
 
 .modular-contacts .card img {
@@ -281,7 +291,7 @@ body.header-fixed.header-animated #header.scrolled img {
 .modular-events .card .card-title {
     font-weight: 800;
     font-size: 2rem;
-    color: $primary-color;
+    color: $red-light;
 }
 
 .modular-events .card .card-subtitle {
@@ -307,13 +317,16 @@ body.header-fixed.header-animated #header.scrolled img {
 .modular-news .card {
     font-family: Geist;
     width: 46%;
-    box-shadow: 3px 3px 5px;
+    border: 3px solid $creme;
+    border-radius: 25px;
+    background-color: $creme;
+    // box-shadow: 3px 3px 5px;
 }
 
 .modular-news .card .card-title {
     font-weight: 600;
     font-size: 1rem;
-    color: $primary-color;
+    color: $creme;
 }
 
 .form-tabs .tabs-nav a {
@@ -326,7 +339,7 @@ body.header-fixed.header-animated #header.scrolled img {
     border: 0 none;
     border-radius: 0;
     transition: none;
-    background-color: $light-color;
+    background-color: $red-light;
 }
 
 .leaflet-container {
@@ -355,7 +368,7 @@ body.header-fixed.header-animated #header.scrolled img {
 //CSS KEYFRAMES
 @keyframes flash-text {
   from { 
-      color: $light-color; 
+      color: $red-light; 
   }
   to {
       color: $default-font-color;
