@@ -1,0 +1,4 @@
+{% set grid_size = theme_var('grid-size') %}
+{% set statement_image = page.header.statement_image ? page.media[page.header.statement_image] : page.media.images|first %}
+
+{% include 'partials/statement.html.twig' %}

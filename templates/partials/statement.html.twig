@@ -1,0 +1,16 @@
+<section id="{{ id }}" class="section modular-statement {{ page.header.statement_classes }}">
+    {% if not statement_image %}
+	<div class="color-fill" style="background-color: {{ page.header.fill_color|default('#000000') }}"></div>	
+    {% else %}
+	<div class="image-overlay {{ page.header.image_overlay_classes }}" {% if statement_image %}style="background-image: url('{{ statement_image.url }}');"{% endif %}></div>
+    {% endif %}
+    <section class="container {{ grid_size }}" style="
+    	padding: 
+		{{ page.header.statement_height_padding|default('100px') }} 
+		{% if not page.header.statement_right_aligned %} 30% {% else %} 0 {% endif %} 
+		{{page.header.statement_height_padding|default('100px')}} 
+		{% if page.header.statement_right_aligned %} 30% {% else %} 0 {% endif %}
+	;">
+        {{ content|raw }}
+    </section>
+</section>

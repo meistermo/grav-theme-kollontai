@@ -1,0 +1,32 @@
+{% set grid_size = theme_var('grid-size') %}
+
+{% set collection = grav.get('flex').collection('contacts') %}
+
+<section class="section modular-contacts {{ page.header.class }}">
+    <section class="container {{ grid_size }}">
+    	{{ content|raw }}
+	<div class="card-container">
+    	    {% for p in collection %}
+		{% for f in p.funktionen %}
+		    {% if f.rolle == page.header.contact_filter %}
+		    <div class="card">
+  	                <div class="card-image">
+			{% if p.bild|first %}
+    			    <img src="{{ url(p.bild|first.path) }}" class="img-responsive">
+  			{% else %}
+			    <img src="{{ url("user://data/headshots/no-avatar.jpg")|e }}" class="img-responsive">
+			{% endif %}
+			</div>
+			<div class="card-header">
+    		            <div class="card-title h5"><a href="mailto:{{ p.email }}">  {{ p.name }}</a></div>
+    		            <div class="card-subtitle text-gray">{{ f.beschreibung }}</div>
+      	                </div>
+  	                <div class="card-body"></div>
+  	                <div class="card-footer"></div>
+	            </div>
+		    {% endif %}
+        	{% endfor %}
+	    {% endfor %}
+        </div>
+    </section>
+</section>

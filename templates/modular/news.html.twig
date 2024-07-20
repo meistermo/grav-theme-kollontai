@@ -1,0 +1,62 @@
+{% set grid_size = theme_var('grid-size') %}
+
+{% set collection = page.collection() %}
+
+<section class="section modular-news {{ page.header.class }}">
+    <section class="container {{ grid_size }}">
+	{{ content|raw }}
+        <div class="card-container">
+            {% for child in collection %}
+		<div class="card">
+    		    <div class="card-header">
+        		<div class="card-subtitle">{{ child.date|date("d.m.y") }}</div>	
+			<div class="card-title">{{ child.title }}</div>
+    		    </div>
+    		    <div class="card-body">
+            		{{ child.summary(300)|raw }}
+    		    </div>
+		    <div class="card-footer">
+		        <a href="{{ child.url }}">Weiterlesen...</a>
+		    </div>
+		</div>
+            {% endfor %}
+	</div>
+    </section>
+</section>
+
+{#
+
+{% set grid_size = theme_var('grid-size') %}
+
+{% set collection = page.collection() %}
+
+<section class="section modular-events {{ page.header.class }}">
+    <section class="container {{ grid_size }}">
+    	{{ content|raw }}
+	<div class="card-container">
+
+    	    {% for child in collection %}
+		<div class="card">
+			<div class="card-header">
+    		            <div class="card-title">{{ child.header.event.start|date("d.m") }}</div>
+    		            <div class="card-subtitle">{{ child.title }}</div>			    
+      	                </div>
+  	            <div class="card-body">
+			{{ child.summary(150)|raw }}
+			
+		    </div>
+  	            <div class="card-footer">
+		    	{% if child.header.event.location %}
+			    <a href="{{ child.url }}">Mehr erfahren ></a>
+			{% else %}
+			    <a href="{{ child.url }}">Online teilnehmen ></a>
+			{% endif %}
+		    </div>
+	        </div>
+		{% if not loop.last %}<div class="vr"></div>{% endif %}
+	    {% endfor %}
+        </div>
+    </section>
+</section>
+
+#}

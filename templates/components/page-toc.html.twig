@@ -1,0 +1,64 @@
+{% macro third_level(items) %}
+    {% for item in items %}
+        {% set class = loop.first ? 'first' : loop.last ? 'last' : null %}
+        <li {% if class %}class="{{ class }}"{% endif %}>
+            <a href="{{ item.uri }}">{{ item.label }}</a>
+            {% if item.children|length > 0 %}
+                <ul>
+                    {{ _self.second_level(item.children) }}
+		</ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% macro second_level(items) %}
+    {% for item in items %}
+        {% set class = loop.first ? 'first' : loop.last ? 'last' : null %}
+        <li {% if class %}class="{{ class }}"{% endif %}>
+	    
+	    {% if not item.children|length > 0 %}
+	        <a href="{{ item.uri }}">{{ item.label }}</a>
+	    {% else %}
+	        <div class="accordion">
+	    	    <input type="radio" id="accordion-{{ loop.index }}" name="accordion-radio" hidden>
+		    <label class="accordion-header" for="accordion-{{ loop.index }}">
+			<a href="{{ item.uri }}">{{ item.label }}</a>
+		    </label>
+		    <div class="accordion-body">
+		        <ul>
+		            {{ _self.third_level(item.children) }}
+		        </ul>
+		    </div>
+	        </div>
+	    {% endif %}
+	</li>
+    {% endfor %}
+{% endmacro %}
+
+{% macro first_level(items) %}
+    {% for item in items %}
+    {{ dump(item) }}
+        {% set class = loop.first ? 'first' : loop.last ? 'last' : null %}
+        <li {% if class %}class="{{ class }}"{% endif %}>
+            <a href="{{ item.uri }}">{{ item.label }}</a>
+            {% if item.children|length > 0 %}
+                <ul>
+                    {{ _self.second_level(item.children) }}
+		</ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% if active or toc_config_var('active') %}
+<div class="page-toc">
+    {% set table_of_contents = toc_items(page.content) %}
+    {% if table_of_contents is not empty %}
+        <h3>Inhaltsverzeichnis</h3>
+        <ul>
+            {{ _self.first_level(table_of_contents.children) }}
+        </ul>
+    {% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,13 @@
+{% set flex = grav.get('flex_objects') %}
+{% set cars = flex.directory('chapters') %}  
+{% set collection = cars.getCollection() %}
+
+<ul>
+{% for car in collection %}
+  <li>
+    Make: {{ car.make }} <br>
+    Model: {{ car.model }} <br>
+    Class: {{ car.class }} <br>
+  </li>
+{% endfor %}
+</ul>

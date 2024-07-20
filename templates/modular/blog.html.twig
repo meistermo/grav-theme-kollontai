@@ -1,0 +1,32 @@
+{% set grid_size = theme_var('grid-size') %}
+
+<section class="section modular-blog blog-listing {{ page.header.class }}">
+    <section class="container {{ grid_size }}">
+
+	{{ content|raw }}
+        {% embed 'partials/layout.html.twig' with {blog: page} %}
+            {% block item %}
+                {% for child in page.collection %}
+		    <div class="card">
+    			<div class="card-header">
+        		    <div class="card-title">
+				{% if child.header.link %}
+    				    <h3 class="p-name mt-1"><a href="{{ child.header.link }}" class="u-url">{{ child.title }}</a></h3>
+				{% else %}
+    					<h3 class="p-name mt-1"><a href="{{ child.url }}" class="u-url">{{ child.title }}</a></h3>
+				{% endif %}
+        		    </div>
+    			</div>
+    			<div class="card-body">
+        		    {% if child.summary != child.content %}
+            		        {{ child.summary|raw }}
+        		    {% else %}
+            			{{ child.content|raw }}
+        		    {% endif %}
+    			</div>
+		    </div>
+                {% endfor %}
+            {% endblock %}
+        {% endembed %}
+    </section>
+</section>
