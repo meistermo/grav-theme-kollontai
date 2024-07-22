@@ -1,0 +1,30 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set show_onpage_menu = false %}
+
+{% block javascripts %}
+    {% if show_onpage_menu %}
+        {% do assets.add('theme://js/singlepagenav.min.js') %}
+    {% endif %}
+    {{ parent() }}
+{% endblock %}
+
+{% block bottom %}
+    {{ parent() }}
+{% endblock %}
+
+{% block hero %}
+    {% for module in page.collection() if module.template == 'modular/hero' %}
+        <div id="{{ module.menu|hyphenize }}"></div>
+        {{ module.content|raw }}
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
+    <div id="bento-grid">
+        {% for module in page.collection() if module.template != 'modular/hero' %}
+            <div id="{{ module.menu|hyphenize }}"></div>
+            {{ module.content|raw }}
+        {% endfor %}
+    </div>
+{% endblock %}
