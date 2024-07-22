@@ -27,6 +27,7 @@ body {
 
 h1 {
     font-family: Anybody;
+    font-style: italic;
     font-weight: 900;
     color: $default-font-color;
     text-transform: uppercase;
@@ -93,6 +94,7 @@ li {
     width: calc(100vw - 20px);
 }
 
+
 #header a {
     color: $creme;
 }
@@ -109,9 +111,7 @@ li {
     height: 3.8rem;
 }
 
-#header.scrolled {
-    background-color: #3d1382;
-}
+
 
 .navbar .logo img {
     height: 500px;
@@ -166,22 +166,29 @@ body.header-fixed.header-animated #header.scrolled img {
 .modular-hero #to-start {
      color: $creme;
 }
-#start {
-    // background-color: #1ac55f;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 500px  500px;
-}
+// #start {
+//     // background-color: #1ac55f;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     grid-template-rows: 500px  500px;
+// }
 
 .modular-hero.hero-fullscreen {
     h1 {
-	font-family: Anybody;
-	text-align: left;
+        font-family: Anybody;
+        text-align: left;
+        font-weight: 900;
     }
     h2 {
         font-family: Anybody;
-	text-align: left;
+        text-align: left;
+        font-weight: 900;
     }
+}
+
+.title-h1h2 h1 {
+    font-family: Anybody;
+    font-weight: 900;   
 }
 
 .modular-statement p, 
@@ -356,7 +363,12 @@ body.header-fixed.header-animated #header.scrolled img {
 //}
 
 #footer {
-    background-color: #3d1382;
+    background-color: $red-light;
+    padding: 20px;
+}
+
+#footer * {
+    color: $creme;
 }
 
 //PSEUDOCLASSES
