@@ -85,15 +85,17 @@ li {
 }
 
 #header {
-    background-color: $red-light;
+    background-color: transparent;
     font-family: Geist;
     font-weight: 800;
     text-transform: uppercase;
     color: $red-light;
     margin: 10px;
     width: calc(100vw - 20px);
+    padding: 0px;
+    border: none;
+    background: linear-gradient(100deg, transparent 0%, transparent 2%, $red-light 2%, $red-light 98%, transparent 98%, transparent 100%);
 }
-
 
 #header a {
     color: $creme;
@@ -119,6 +121,10 @@ li {
 
 body.header-fixed.header-animated #header.scrolled img {
     height: 4rem;
+}
+
+body.header-fixed.header-animated #header.scrolled .logo img {
+    height: 38px;
 }
 
 .color-fill {
