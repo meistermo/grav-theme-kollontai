@@ -172,12 +172,13 @@ body.header-fixed.header-animated #header.scrolled .logo img {
 .modular-hero #to-start {
      color: $creme;
 }
-// #start {
-//     // background-color: #1ac55f;
-//     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr;
-//     grid-template-rows: 500px  500px;
-// }
+ 
+#bento-grid {
+     // background-color: #1ac55f;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 500px  500px;
+}
 
 .modular-hero.hero-fullscreen {
     h1 {
