@@ -9,6 +9,9 @@ $creme: #FFF2F4;
 $default-font-color: #000000;
 $darkest-color: #000000;
 
+* {
+    font-family: Gespenst;
+}
 
 // Only apply sticky when columns are shown side-by-side
 @media screen and (min-width: 841px) {
@@ -26,35 +29,29 @@ body {
 }
 
 h1 {
-    font-family: Anybody;
-    font-style: italic;
-    font-weight: 900;
+    font-family: Ginoz;
     color: $default-font-color;
     text-transform: uppercase;
 }
 
 h2 {
-    font-family: Geist;
     font-weight: 900;
     color: $default-font-color;
     text-transform: uppercase;
 }
 
 h3 {
-    font-family: Geist;
     font-weight: 900;
     color: $default-font-color;
     scroll-margin-top: 75px;
 }
 
 h4, h5, h6 {
-    font-family: Geist;
     color: $default-font-color;
     scroll-margin-top: 75px;
 }
 
 p {
-    font-family: Geist;
     color: $default-font-color;
 }
 
@@ -86,7 +83,6 @@ li {
 
 #header {
     background-color: transparent;
-    font-family: Geist;
     font-weight: 800;
     text-transform: uppercase;
     color: $red-light;
@@ -173,29 +169,19 @@ body.header-fixed.header-animated #header.scrolled .logo img {
      color: $creme;
 }
  
-#bento-grid {
-     // background-color: #1ac55f;
-     display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
-     grid-template-rows: 500px  500px;
-}
-
 .modular-hero.hero-fullscreen {
     h1 {
-        font-family: Anybody;
+        font-family: Ginoz;
         text-align: left;
-        font-weight: 900;
     }
     h2 {
-        font-family: Anybody;
+        font-family: Ginoz;
         text-align: left;
-        font-weight: 900;
     }
 }
 
 .title-h1h2 h1 {
-    font-family: Anybody;
-    font-weight: 900;   
+    font-family: Ginoz;
 }
 
 .modular-statement p, 
@@ -272,7 +258,6 @@ body.header-fixed.header-animated #header.scrolled .logo img {
 }
 
 .modular-contacts .card {
-    font-family: Geist;
     border:  3px solid 25px;
     width: 18%;
     // border: none;
@@ -297,7 +282,6 @@ body.header-fixed.header-animated #header.scrolled .logo img {
 }
 
 .modular-events .card {
-    font-family: Geist;
     width: 30%;
     border: none;
 }
@@ -329,7 +313,6 @@ body.header-fixed.header-animated #header.scrolled .logo img {
 }
 
 .modular-news .card {
-    font-family: Geist;
     width: 46%;
     border: 3px solid $creme;
     border-radius: 25px;
@@ -392,4 +375,28 @@ body.header-fixed.header-animated #header.scrolled .logo img {
   to {
       color: $default-font-color;
   }
+}
+
+#bento-grid > div {
+    display: none;
+}
+
+#bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    // grid-template-rows: 500px  500px;
+    color: white !important;
+}
+
+#bento-grid * {
+    color: #FFF2F4;
+}
+
+#bento-grid > section {
+    background-color: #680A2C !important;
+    
+    border-radius: 20px;
+    margin: 20px;
+    max-width: 600px;
 }
