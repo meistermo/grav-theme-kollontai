@@ -33,19 +33,11 @@
 		{% endif %}
                 
 		{{ page.content|raw }}
-		
-		<div class="card-container">
+		<div class="subpages">
     	    	    {% for p in collection %}
-			<div class="card">
-		            <div class="card-header">
-		                <div class="card-title h5"><a href="{{ p.url }}"> {{ p.title }}</a></div>
-		            </div>
-  	            	    <div class="card-body"></div>
-  	            	    <div class="card-footer"></div>
-	        	</div>
+		        <a class="btn btn-lg" href="{{ p.url }}"> {{ p.title }} </a> 
 	    	    {% endfor %}
-        	</div>
-	    
+	        </div>
 	    </div>
 
 	{% endblock %}
