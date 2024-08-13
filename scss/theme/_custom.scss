@@ -1,6 +1,6 @@
 //VARIABLE OVERRIDES
-$red-dark: #680A2C;
-$red-light: #FF203B;
+$red-dark: #6D0921;
+$red-light: #FF2828;
 $purple-dark: #3D1382;
 $purple-light: #9B62FF;
 $creme: #FFF2F4;
@@ -87,7 +87,6 @@ body {
 h1 {
     font-family: Rudi;
     font-style: italic;
-    font-weight: 900;
     color: $default-font-color;
     text-transform: uppercase;
 }
@@ -233,11 +232,28 @@ body.header-fixed.header-animated #header.scrolled .logo img {
      color: $creme;
 }
  
+#bento-grid > div {
+    display: none;
+}
+
 #bento-grid {
-    // background-color: #1ac55f;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 500px  500px;
+    justify-items: center;
+    // grid-template-rows: 500px  500px;
+    color: white !important;
+}
+
+#bento-grid * {
+    color: #FFF2F4;
+}
+
+#bento-grid > section {
+    background-color: #680A2C !important;
+
+    border-radius: 20px;
+    margin: 20px;
+    max-width: 600px;
 }
 
 .btn-lg {
