@@ -7,6 +7,7 @@ $creme: #FFF2F4;
 
 //CUSTOM VARIABLES
 $default-font-color: #000000;
+$alt-font-color: #ffffff;
 $darkest-color: #000000;
 
 
@@ -174,10 +175,25 @@ body.header-fixed.header-animated #header.scrolled .logo img {
 }
  
 #bento-grid {
-     // background-color: #1ac55f;
-     display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
-     grid-template-rows: 500px  500px;
+    // background-color: #1ac55f;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 500px  500px;
+}
+
+.btn-lg {
+    border: 0px;
+    border-radius: 20px;
+    background-color: $red-light;
+    color: $alt-font-color !important;
+}
+
+.btn-lg:hover {
+    background-color: $red-dark;
+}
+
+.btn-lg:focus {
+    background-color: $red-dark;
 }
 
 .modular-hero.hero-fullscreen {
