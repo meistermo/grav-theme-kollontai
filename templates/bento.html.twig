@@ -1,8 +1,13 @@
 {% extends 'partials/base.html.twig' %}
 
 {% set show_onpage_menu = false %}
+{% block stylesheets %}
+    {% do assets.add('theme://css/bricklayer.css') %}
+    {{ parent() }}
+    {% endblock %}
 
 {% block javascripts %}
+    {% do assets.add('theme://js/bricklayer.min.js') %}
     {% if show_onpage_menu %}
         {% do assets.add('theme://js/singlepagenav.min.js') %}
     {% endif %}
@@ -21,9 +26,12 @@
 {% endblock %}
 
 {% block body %}
-    <div id="bento-grid">
+    <div class="bricklayer" id="bento-grid">
         {% for module in page.collection() if module.template != 'modular/hero' %}
      	        {{ module.content|raw }}
 	{% endfor %}
     </div>
+    <script>
+	var bricklayer = new Bricklayer(document.querySelector('.bricklayer'));
+    </script>
 {% endblock %}

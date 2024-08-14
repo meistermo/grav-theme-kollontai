@@ -78,6 +78,12 @@ $darkest-color: #000000;
     overflow-y: auto;
     }
 }
+ 
+
+.bricklayer-column-sizer {
+    /* divide by 3. */
+    width: 33.3% !important;
+}
 
 //CUSTOM CSS
 body {
@@ -232,28 +238,15 @@ body.header-fixed.header-animated #header.scrolled .logo img {
      color: $creme;
 }
  
-#bento-grid > div {
-    display: none;
-}
-
-#bento-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    // grid-template-rows: 500px  500px;
-    color: white !important;
-}
-
 #bento-grid * {
     color: #FFF2F4;
 }
 
-#bento-grid > section {
+#bento-grid > .bricklayer-column > section {
     background-color: #680A2C !important;
 
     border-radius: 20px;
     margin: 20px;
-    max-width: 600px;
 }
 
 .btn-lg {
